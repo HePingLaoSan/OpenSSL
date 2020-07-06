@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in Mac OS and gone in iOS, this spec gives your project non-deprecated OpenSSL support. Supports OSX and iOS including Simulator (armv7,armv7s,arm64,x86_64)."
   s.homepage     = "https://github.com/krzyzanowskim/OpenSSL"
   s.license	     = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE.txt' }
-  s.source       = { :git => "https://github.com/krzyzanowskim/OpenSSL.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/HePingLaoSan/OpenSSL.git", :tag => "#{s.version}" }
 
   s.authors       =  {'Mark J. Cox' => 'mark@openssl.org',
                      'Ralf S. Engelschall' => 'rse@openssl.org',
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.requires_arc = false
   s.default_subspec = 'Static'
   s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.15'
 
   s.subspec 'Static' do |sp|
     sp.ios.deployment_target = '6.0'
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
     sp.ios.preserve_paths      = 'ios/lib/libcrypto.a', 'ios/lib/libssl.a'
     sp.ios.vendored_libraries  = 'ios/lib/libcrypto.a', 'ios/lib/libssl.a'
 
-    sp.osx.deployment_target = '10.9'
+    sp.osx.deployment_target = '10.15'
     sp.osx.source_files        = 'macos/include/openssl/**/*.h'
     sp.osx.public_header_files = 'macos/include/openssl/**/*.h'
     sp.osx.header_dir          = 'openssl'
@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
   s.subspec 'Framework' do |sp|
     sp.ios.deployment_target = '8.0'
     sp.ios.vendored_frameworks = 'Frameworks/ios/OpenSSL.framework'
-    sp.osx.deployment_target = '10.9'
+    sp.osx.deployment_target = '10.15'
     sp.osx.vendored_frameworks = 'Frameworks/macos/OpenSSL.framework'
   end
 end
